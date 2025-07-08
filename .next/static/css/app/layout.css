@@ -245,6 +245,10 @@
   }
 }
 @layer utilities {
+  .\@container\/card-header {
+    container-type: inline-size;
+    container-name: card-header;
+  }
   .pointer-events-none {
     pointer-events: none;
   }
@@ -318,6 +322,15 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .col-start-2 {
+    grid-column-start: 2;
+  }
+  .row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+  .row-start-1 {
+    grid-row-start: 1;
   }
   .-mx-1 {
     margin-inline: calc(var(--spacing) * -1);
@@ -533,6 +546,9 @@
   .auto-rows-min {
     grid-auto-rows: min-content;
   }
+  .grid-rows-\[auto_auto\] {
+    grid-template-rows: auto auto;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -541,6 +557,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
   }
   .justify-center {
     justify-content: center;
@@ -556,6 +575,22 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .self-start {
+    align-self: flex-start;
+  }
+  .justify-self-end {
+    justify-self: flex-end;
   }
   .truncate {
     overflow: hidden;
@@ -635,6 +670,9 @@
   }
   .bg-border {
     background-color: var(--border);
+  }
+  .bg-card {
+    background-color: var(--card);
   }
   .bg-destructive {
     background-color: var(--destructive);
@@ -717,8 +755,14 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
   }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
@@ -740,6 +784,10 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
   }
   .leading-tight {
     --tw-leading: var(--leading-tight);
@@ -769,6 +817,9 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-card-foreground {
+    color: var(--card-foreground);
   }
   .text-foreground {
     color: var(--foreground);
@@ -831,6 +882,10 @@
   }
   .shadow-none {
     --tw-shadow: 0 0 #0000;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-xs {
@@ -1421,6 +1476,11 @@
       cursor: e-resize;
     }
   }
+  .has-data-\[slot\=card-action\]\:grid-cols-\[1fr_auto\] {
+    &:has(*[data-slot="card-action"]) {
+      grid-template-columns: 1fr auto;
+    }
+  }
   .has-data-\[variant\=inset\]\:bg-sidebar {
     &:has(*[data-variant="inset"]) {
       background-color: var(--sidebar);
@@ -1886,6 +1946,16 @@
       color: var(--muted-foreground);
     }
   }
+  .\[\.border-b\]\:pb-6 {
+    &:is(.border-b) {
+      padding-bottom: calc(var(--spacing) * 6);
+    }
+  }
+  .\[\.border-t\]\:pt-6 {
+    &:is(.border-t) {
+      padding-top: calc(var(--spacing) * 6);
+    }
+  }
   .data-\[variant\=destructive\]\:\*\:\[svg\]\:\!text-destructive {
     &[data-variant="destructive"] {
       :is(& > *) {
@@ -2119,6 +2189,11 @@
   inherits: false;
   initial-value: 0;
 }
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -2262,6 +2337,7 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
