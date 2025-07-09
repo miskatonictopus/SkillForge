@@ -1,4 +1,4 @@
-// File: /Users/javierferrer/Desktop/skillforge/app/layout.tsx
+// File: /Users/javierferrer/Desktop/SkillForge/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
