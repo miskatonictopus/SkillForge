@@ -1,4 +1,4 @@
-// File: /Users/javierferrer/Desktop/SkillForge/app/configuracion/page.tsx
+// File: /Users/javierferrer/Desktop/skillforge/app/configuracion/page.tsx
 import * as entry from '../../../../app/configuracion/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
