@@ -74,6 +74,8 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-900: oklch(21% 0.006 285.885);
@@ -95,11 +97,14 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --tracking-tight: -0.025em;
     --tracking-widest: 0.1em;
     --leading-tight: 1.25;
     --radius-xs: 0.125rem;
@@ -298,6 +303,9 @@
   }
   .top-1\.5 {
     top: calc(var(--spacing) * 1.5);
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
   }
   .top-3\.5 {
     top: calc(var(--spacing) * 3.5);
@@ -515,6 +523,9 @@
   .w-full {
     width: 100%;
   }
+  .w-px {
+    width: 1px;
+  }
   .max-w-\(--skeleton-width\) {
     max-width: var(--skeleton-width);
   }
@@ -626,6 +637,9 @@
   .items-start {
     align-items: flex-start;
   }
+  .items-stretch {
+    align-items: stretch;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -640,6 +654,9 @@
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -785,6 +802,9 @@
   .bg-transparent {
     background-color: transparent;
   }
+  .bg-zinc-700 {
+    background-color: var(--color-zinc-700);
+  }
   .bg-zinc-900 {
     background-color: var(--color-zinc-900);
   }
@@ -870,6 +890,10 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -917,6 +941,10 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
   }
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
@@ -1393,10 +1421,47 @@
       left: calc(1/2 * 100%);
     }
   }
+  .after\:ml-2 {
+    &::after {
+      content: var(--tw-content);
+      margin-left: calc(var(--spacing) * 2);
+    }
+  }
+  .after\:block {
+    &::after {
+      content: var(--tw-content);
+      display: block;
+    }
+  }
   .after\:w-\[2px\] {
     &::after {
       content: var(--tw-content);
       width: 2px;
+    }
+  }
+  .after\:w-px {
+    &::after {
+      content: var(--tw-content);
+      width: 1px;
+    }
+  }
+  .after\:self-stretch {
+    &::after {
+      content: var(--tw-content);
+      align-self: stretch;
+    }
+  }
+  .after\:bg-zinc-700 {
+    &::after {
+      content: var(--tw-content);
+      background-color: var(--color-zinc-700);
+    }
+  }
+  .after\:content-\[\'\'\] {
+    &::after {
+      content: var(--tw-content);
+      --tw-content: '';
+      content: var(--tw-content);
     }
   }
   .group-data-\[collapsible\=offcanvas\]\:after\:left-full {
@@ -1458,6 +1523,13 @@
       }
     }
   }
+  .hover\:text-emerald-400 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-emerald-400);
+      }
+    }
+  }
   .hover\:text-foreground {
     &:hover {
       @media (hover: hover) {
@@ -1465,10 +1537,24 @@
       }
     }
   }
+  .hover\:text-red-500 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-red-500);
+      }
+    }
+  }
   .hover\:text-sidebar-accent-foreground {
     &:hover {
       @media (hover: hover) {
         color: var(--sidebar-accent-foreground);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -2359,6 +2445,16 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
+}
+@font-face {
+  font-family: 'NotoJp';
+  src: url('/fonts/NotoJp/NotoSerifJP-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+.NotoJp {
+  font-family: 'NotoJp', serif;
 }
 :root {
   --font-sans: 'Geist', system-ui, sans-serif;
