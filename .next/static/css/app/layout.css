@@ -1,29 +1,29 @@
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.tsx","import":"","arguments":[{"src":[{"path":"../fonts/Geist/Geist-VariableFont_wght.ttf","weight":"400","style":"normal"}],"variable":"--font-geist","display":"swap"}],"variableName":"geist"} ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.tsx","import":"","arguments":[{"src":[{"path":"../fonts/Geist/Geist-VariableFont_wght.ttf","weight":"100 900","style":"normal"}],"variable":"--font-geist","display":"swap"}],"variableName":"geist"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @font-face {
 font-family: 'geist';
 src: url(/_next/static/media/4dc25fc1e69227c2-s.p.ttf) format('truetype');
 font-display: swap;
-font-weight: 400;
+font-weight: 100 900;
 font-style: normal;
 }@font-face {font-family: 'geist Fallback';src: local("Arial");ascent-override: 94.47%;descent-override: 27.73%;line-gap-override: 0.00%;size-adjust: 106.39%
-}.__className_d54c42 {font-family: 'geist', 'geist Fallback';font-weight: 400;font-style: normal
-}.__variable_d54c42 {--font-geist: 'geist', 'geist Fallback'
+}.__className_934da7 {font-family: 'geist', 'geist Fallback';font-style: normal
+}.__variable_934da7 {--font-geist: 'geist', 'geist Fallback'
 }
 
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.tsx","import":"","arguments":[{"src":[{"path":"../fonts/NotoJp/NotoSerifJP-VariableFont_wght.ttf","weight":"400","style":"normal"}],"variable":"--font-notojp","display":"swap"}],"variableName":"notoJp"} ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.tsx","import":"","arguments":[{"src":[{"path":"../fonts/NotoJp/NotoSerifJP-VariableFont_wght.ttf","weight":"100 900","style":"normal"}],"variable":"--font-notojp","display":"swap"}],"variableName":"notoJp"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @font-face {
 font-family: 'notoJp';
 src: url(/_next/static/media/7eecff0fd2c0ce88-s.p.ttf) format('truetype');
 font-display: swap;
-font-weight: 400;
+font-weight: 100 900;
 font-style: normal;
 }@font-face {font-family: 'notoJp Fallback';src: local("Arial");ascent-override: 105.89%;descent-override: 26.31%;line-gap-override: 0.00%;size-adjust: 108.70%
-}.__className_86a41b {font-family: 'notoJp', 'notoJp Fallback';font-weight: 400;font-style: normal
-}.__variable_86a41b {--font-notojp: 'notoJp', 'notoJp Fallback'
+}.__className_fcd24e {font-family: 'notoJp', 'notoJp Fallback';font-style: normal
+}.__variable_fcd24e {--font-notojp: 'notoJp', 'notoJp Fallback'
 }
 
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
@@ -38,7 +38,6 @@ font-style: normal;
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-900: oklch(21% 0.006 285.885);
-    --color-zinc-950: oklch(14.1% 0.005 285.823);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -405,9 +404,6 @@ font-style: normal;
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
@@ -473,9 +469,6 @@ font-style: normal;
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
@@ -584,6 +577,9 @@ font-style: normal;
   }
   .auto-rows-min {
     grid-auto-rows: min-content;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -780,9 +776,6 @@ font-style: normal;
   .bg-zinc-900 {
     background-color: var(--color-zinc-900);
   }
-  .bg-zinc-950 {
-    background-color: var(--color-zinc-950);
-  }
   .fill-current {
     fill: currentcolor;
   }
@@ -860,9 +853,6 @@ font-style: normal;
   }
   .text-left {
     text-align: left;
-  }
-  .font-sans {
-    font-family: var(--font-geist-sans);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -985,10 +975,6 @@ font-style: normal;
   }
   .underline-offset-4 {
     text-underline-offset: 4px;
-  }
-  .antialiased {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   .opacity-50 {
     opacity: 50%;
@@ -2036,6 +2022,11 @@ font-style: normal;
       min-height: min-content;
     }
   }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:text-sm {
     @media (width >= 48rem) {
       font-size: var(--text-sm);
@@ -2447,6 +2438,12 @@ font-style: normal;
     color: var(--foreground);
   }
 }
+.font-notojp {
+  font-family: var(--font-notojp);
+}
+.font-geist {
+  font-family: var(--font-geist);
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -2656,4 +2653,3 @@ font-style: normal;
     }
   }
 }
-
