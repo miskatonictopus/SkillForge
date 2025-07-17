@@ -37,9 +37,7 @@ font-style: normal;
     --color-red-200: oklch(88.5% 0.062 18.334);
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-emerald-200: oklch(90.5% 0.093 164.15);
-    --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
-    --color-rose-400: oklch(71.2% 0.194 13.428);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
@@ -78,7 +76,6 @@ font-style: normal;
     --radius-xs: 0.125rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
     --default-transition-duration: 150ms;
@@ -386,8 +383,8 @@ font-style: normal;
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .-ml-1 {
     margin-left: calc(var(--spacing) * -1);
@@ -487,12 +484,6 @@ font-style: normal;
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
-  }
-  .h-\[13rem\] {
-    height: 13rem;
-  }
-  .h-\[14rem\] {
-    height: 14rem;
   }
   .h-\[15rem\] {
     height: 15rem;
@@ -666,9 +657,6 @@ font-style: normal;
   .animate-in {
     animation: enter var(--tw-animation-duration,var(--tw-duration,.15s))var(--tw-ease,ease)var(--tw-animation-delay,0s)var(--tw-animation-iteration-count,1)var(--tw-animation-direction,normal)var(--tw-animation-fill-mode,none);
   }
-  .animate-ping {
-    animation: var(--animate-ping);
-  }
   .animate-pulse {
     animation: var(--animate-pulse);
   }
@@ -734,9 +722,6 @@ font-style: normal;
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
-  }
-  .gap-\[2px\] {
-    gap: 2px;
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -898,6 +883,9 @@ font-style: normal;
   .bg-transparent {
     background-color: transparent;
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .bg-zinc-700 {
     background-color: var(--color-zinc-700);
   }
@@ -1000,12 +988,6 @@ font-style: normal;
   .align-middle {
     vertical-align: middle;
   }
-  .\!font-sans {
-    font-family: var(--font-geist-sans) !important;
-  }
-  .font-sans {
-    font-family: var(--font-geist-sans);
-  }
   .\!text-xs {
     font-size: var(--text-xs) !important;
     line-height: var(--tw-leading, var(--text-xs--line-height)) !important;
@@ -1087,6 +1069,9 @@ font-style: normal;
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-card-foreground {
     color: var(--card-foreground);
   }
@@ -1095,9 +1080,6 @@ font-style: normal;
   }
   .text-emerald-200 {
     color: var(--color-emerald-200);
-  }
-  .text-emerald-300 {
-    color: var(--color-emerald-300);
   }
   .text-foreground {
     color: var(--foreground);
@@ -1116,9 +1098,6 @@ font-style: normal;
   }
   .text-red-200 {
     color: var(--color-red-200);
-  }
-  .text-rose-400 {
-    color: var(--color-rose-400);
   }
   .text-secondary-foreground {
     color: var(--secondary-foreground);
@@ -1143,9 +1122,6 @@ font-style: normal;
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .italic {
-    font-style: italic;
   }
   .tabular-nums {
     --tw-numeric-spacing: tabular-nums;
@@ -1187,6 +1163,10 @@ font-style: normal;
   }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-xs {
@@ -2889,12 +2869,6 @@ font-style: normal;
   syntax: "*";
   initial-value: "";
   inherits: false;
-}
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
 }
 @keyframes pulse {
   50% {
