@@ -19,6 +19,7 @@
     "/calendario/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/calendario/page.css",
       "static/chunks/app/calendario/page.js"
     ],
     "/_not-found/page": [
