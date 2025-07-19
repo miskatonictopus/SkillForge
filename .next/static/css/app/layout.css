@@ -520,6 +520,9 @@ font-style: normal;
   .min-h-0 {
     min-height: calc(var(--spacing) * 0);
   }
+  .min-h-\[80px\] {
+    min-height: 80px;
+  }
   .min-h-svh {
     min-height: 100svh;
   }
