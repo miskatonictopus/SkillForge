@@ -793,6 +793,9 @@ font-style: normal;
   .overflow-y-auto {
     overflow-y: auto;
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
   .rounded-\[2px\] {
     border-radius: 2px;
   }
