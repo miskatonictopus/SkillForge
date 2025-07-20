@@ -16,11 +16,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
     ],
-    "/calendario/page": [
+    "/configuracion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/calendario/page.css",
-      "static/chunks/app/calendario/page.js"
+      "static/chunks/app/configuracion/page.js"
     ]
   }
 }
